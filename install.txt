@@ -1,0 +1,4 @@
+0
+If you want to install the requirements again, change the number to 0.
+
+Just run the main file
