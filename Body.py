@@ -1,4 +1,5 @@
 from moviepy.editor import *
+from keys import *
 import pyttsx3, praw, os, textwrap, random, boto3, eyed3, shutil
 from PIL import Image, ImageDraw, ImageFont
 import pandas as pd
@@ -20,9 +21,9 @@ def body(link):
   
   
   polly_client = boto3.Session(
-    aws_access_key_id='AKIAXVIBDJKGV34E7GVJ',
-    aws_secret_access_key='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',
-    region_name='us-west-2').client('polly')
+    aws_access_key_id=id(),
+    aws_secret_access_key=key(),
+    region_name=region_name()).client(client())
 
 
   video = VideoFileClip(r"{}".format(cwd) + "/bac.mp4") 
@@ -34,13 +35,13 @@ def body(link):
   number = l[a[3]]
 
   video = video.subclip(number, int(video.duration))
-  #Permision from reddit
+  #Permision from reddit  
   reddit = praw.Reddit(
-    client_id="p1P6xKWngBRm57uUhyZ2NQ",
-    client_secret="GgAjznRLhAlE-E35VtWH00Hcn1ptSg",
-    user_agent="ScraperBot v1.0 by /u/BallZi2k21",
-    username="BallZi2k21",
-    password="scothgard",
+      client_id=reddit_id(),
+      client_secret=reddit_secret(),
+      user_agent=user_agent(),
+      username=user_agent(),
+      password=password(),
   )
   #The link to the post 
   submission = reddit.submission(url=link)

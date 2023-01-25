@@ -28,9 +28,9 @@ def click():
     
 
   polly_client = boto3.Session(
-    aws_access_key_id='AKIAXVIBDJKGV34E7GVJ',
-    aws_secret_access_key='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',
-    region_name='us-west-2').client('polly')
+    aws_access_key_id=id(),
+    aws_secret_access_key=key(),
+    region_name=region_name()).client(client())
 
   link = textentry.get()
   parts = textentry2.get()

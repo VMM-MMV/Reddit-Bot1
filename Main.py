@@ -29,12 +29,10 @@ def click():
       f.write("""1
   If you want to install the requirements again, change the number to 0.""")
 
-  
-
   polly_client = boto3.Session(
-    aws_access_key_id='your_id',
-    aws_secret_access_key='your_key',
-    region_name='us-west-2').client('polly')
+    aws_access_key_id=id(),
+    aws_secret_access_key=key(),
+    region_name=region_name()).client(client())
 
   link = textentry.get()
   parts = textentry2.get()
@@ -62,13 +60,12 @@ def click():
   video = video.subclip(number, int(video.duration))
 
   reddit = praw.Reddit(
-  client_id="p1P6xKWngBRm57uUhyZ2NQ",
-  client_secret="GgAjznRLhAlE-E35VtWH00Hcn1ptSg",
-  user_agent="ScraperBot v1.0 by /u/BallZi2k21",
-  username="BallZi2k21",
-  password="scothgard", )
+        client_id=reddit_id(),
+        client_secret=reddit_secret(),
+        user_agent=user_agent(),
+        username=user_agent(),
+        password=password())
   submission = reddit.submission(url=link)
-  
   
   comments = []
   comment_parts = parts.split("---")

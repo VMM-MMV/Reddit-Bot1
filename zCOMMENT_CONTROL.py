@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 from tkinter import *
-#from Conector import *
+from keys import *
 from pathlib import Path
 from moviepy.editor import *
 import praw, pendulum, os
@@ -18,11 +18,12 @@ def click():
   parts = textentry2.get()
   
   reddit = praw.Reddit(
-  client_id="p1P6xKWngBRm57uUhyZ2NQ",
-  client_secret="GgAjznRLhAlE-E35VtWH00Hcn1ptSg",
-  user_agent="ScraperBot v1.0 by /u/BallZi2k21",
-  username="BallZi2k21",
-  password="scothgard", )
+        client_id=reddit_id(),
+        client_secret=reddit_secret(),
+        user_agent=user_agent(),
+        username=user_agent(),
+        password=password(),
+    )
   submission = reddit.submission(url=link)
 
   
