@@ -1,6 +1,7 @@
 # -*- coding:utf-8 -*-
 from tkinter import *
 from Intro import *
+from keys import *
 from Body import *
 from install import *
 from pathlib import Path
